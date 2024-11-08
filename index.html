@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#introducao">INTRODUÇÃO</a></li>
+                <li><a href="#calculadora">CALCULAR MASSA CORPORAL</a></li>
+                <li><a href="#footer">CONSIDERAÇÕES</a></li>
+            </ul>
+
+            <!-- <img class="tema" src="https://img.icons8.com/?size=100&id=7uBJnsUXZ4s9&format=png&color=000000" alt="" onclick="trocaDeTema()"> -->
+
+        </nav>
+    </header>
+
+    <section id="introducao">
+        <div>
+            <h1>Índice de Massa Corporal</h1>
+        </div>
+        <div class="conteudo">
+            <p>Uma calculadora de Índice de Massa Corporal (IMC) é uma ferramenta que ajuda a determinar se o seu peso está adequado para a sua altura. O cálculo do IMC é feito dividindo o peso pela altura ao quadrado, e o resultado é usado para classificar o seu peso em diferentes categorias, como abaixo do peso, peso normal, sobrepeso ou obesidade.
+
+                Essa calculadora é útil para dar uma ideia geral sobre a saúde do peso, mas lembre-se que ela não leva em consideração outros fatores, como a composição corporal (músculos, gordura, etc.). É uma forma simples de avaliar se o peso está dentro de um intervalo considerado saudável.</p>
+        </div>
+    </section>
+
+    <section id="calculadora">
+
+        <label for="altura">Altura:</label>
+        <input type="number" name="altura" id="altura">
+
+        <label for="peso">Peso:</label>
+        <input type="number" name="peso" id="peso">
+
+        <button onclick="calcImc()"> Calcular IMC </button>
+
+        <p>Seu Índice de massa corporal é: <span id="resultado"></span></p>
+
+    </section>
+
+    <footer id="footer">
+
+    </footer>
+
+
+
+
+
+
+
+    <!-- -------------------------------------------------------------------------java script ------------------------------- -->
+    <script>
+
+        function calcImc() {
+            const altura = document.getElementById("altura").value;
+            const peso = document.getElementById("peso").value;
+            const resultado = peso / (altura ** 2); // ** = elevado
+
+            document.getElementById("resultado").textContent = resultado.toFixed(2) // aqui ele está dizendo que to conteudo dentro de resultado vai ter como limite de casas decimais depois da (,) será de duas casas
+        }
+
+        function trocaDeTema() {
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -2,54 +2,187 @@
 <html lang="pt-br">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMC</title>
 </head>
 
-<body>
+<body id="corpo">
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="#introducao">INTRODUÇÃO</a></li>
-                <li><a href="#calculadora">CALCULAR MASSA CORPORAL</a></li>
-                <li><a href="#footer">CONSIDERAÇÕES</a></li>
+        <nav id="navegador">
+            <ul id="lista-navegacao">
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#calculadora">Calculadora de IMC</a></li>
+                <li><a href="#resultado">Entenda seu Resultado</a></li>
+                <li><a href="#footer">Direitos autorais</a></li>
             </ul>
 
-            <!-- <img class="tema" src="https://img.icons8.com/?size=100&id=7uBJnsUXZ4s9&format=png&color=000000" alt="" onclick="trocaDeTema()"> -->
+            <!-- Sor antes que eu seja morto por usar multiplos id olha explicação do pq eu fiz isso lá no script -->
+
+            <button class="botaotrocadecor" onclick="trocarDeTema()"> Modo Escuro <img class="moon"
+                    src="imgs/imgtradcolor/icons8-lua-brilhante-24.png" alt=""> </button>
 
         </nav>
     </header>
 
-    <section id="introducao">
-        <div>
-            <h1>Índice de Massa Corporal</h1>
-        </div>
-        <div class="conteudo">
-            <p>Uma calculadora de Índice de Massa Corporal (IMC) é uma ferramenta que ajuda a determinar se o seu peso está adequado para a sua altura. O cálculo do IMC é feito dividindo o peso pela altura ao quadrado, e o resultado é usado para classificar o seu peso em diferentes categorias, como abaixo do peso, peso normal, sobrepeso ou obesidade.
+    <section id="introducao ">
+        <div class="introducaoconcertada displayflexcolumcenter">
 
-                Essa calculadora é útil para dar uma ideia geral sobre a saúde do peso, mas lembre-se que ela não leva em consideração outros fatores, como a composição corporal (músculos, gordura, etc.). É uma forma simples de avaliar se o peso está dentro de um intervalo considerado saudável.</p>
+            <div>
+                <h1 id="ficanessacorinferno">Índice de Massa Corporal</h1>
+            </div>
+
+            <div class="somentedisplaybeetw">
+                <div class="conteudo">
+
+                    <p class="intro1">Este site tem apenas fins de curiosidade e informação geral. É importante
+                        ressaltar
+                        que a
+                        calculadora de
+                        Índice de Massa Corporal (IMC) aqui disponível não é uma ferramenta cientificamente comprovada
+                        para
+                        avaliar de maneira definitiva a saúde ou o estado físico de uma pessoa. O IMC é apenas uma
+                        medida
+                        aproximada e deve ser interpretado com cautela, pois não leva em conta aspectos importantes,
+                        como
+                        composição corporal, massa muscular ou distribuição de gordura. Consultar um profissional de
+                        saúde é
+                        sempre o mais indicado para uma análise completa e personalizada.
+                    </p>
+                    <p class="intro2">
+                        A calculadora de Índice de Massa Corporal (IMC) é uma ferramenta que estima a relação entre o
+                        peso e
+                        a
+                        altura de uma pessoa para classificar o seu peso em faixas como "abaixo do peso", "peso normal",
+                        "sobrepeso" e "obesidade". Para calcular o IMC, basta dividir o peso (em quilogramas) pela
+                        altura
+                        (em
+                        metros) ao quadrado. É uma fórmula simples, desenvolvida para oferecer uma visão geral sobre o
+                        peso
+                        em
+                        relação à altura, mas não substitui uma avaliação completa de saúde feita por especialistas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
         </div>
+
     </section>
+
 
     <section id="calculadora">
 
-        <label for="altura">Altura:</label>
-        <input type="number" name="altura" id="altura">
+        <div class="calculadoraconcertada">
+            <!-- <div class="calculeseuimc">
+            <h2>Calcule seu IMC</h2>
+        </div> -->
 
-        <label for="peso">Peso:</label>
-        <input type="number" name="peso" id="peso">
+            <div class="horadocalculo">
+                <div class="interfacedecalculo">
+                    <div class="alinhamentodainsercao">
 
-        <button onclick="calcImc()"> Calcular IMC </button>
+                        <div class="insercaodealtura">
+                            <label for="altura">Altura:</label>
+                            <input type="number" name="altura" id="altura">
+                        </div>
 
-        <p>Seu Índice de massa corporal é: <span id="resultado"></span></p>
+                        <div class="insercaodepeso">
+                            <label for="peso">Peso:</label>
+                            <input type="number" name="peso" id="peso">
+                        </div>
+
+                    </div>
+
+                    <button class="botaodocalculo" onclick="calcImc()"> CALCULE </button>
+
+                </div>
+
+                <div class="resultadonumerico">
+                    <p>SEU ÍNDICE: <span id="resultado"></span></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="resultado">
+
+        <h2>Entenda Seu Resultado</h2>
+
+        <div class="conteudoresultado somentedisplayflex">
+
+            <img class="imgdotiposdepeso" src="imgs/fotos pesos/Cual-es-la-Formula-del-Indice-de-Masa-Corporal-4.png"
+                alt="">
+
+            <div>
+                <ul class="listadoresultado">
+                    <li><b>Normal:</b> Peso considerado ideal, onde peso e altura estão em equilíbrio, geralmente
+                        associado a menores riscos de saúde.</li>
+                    <li><b>Sobrepeso:</b> Peso acima do ideal, podendo ser um sinal para rever hábitos alimentares e
+                        incluir atividades físicas.</li>
+                    <li><b>Obesidade I:</b> Excesso de peso inicial, com riscos aumentados para a saúde, especialmente
+                        em relação a doenças cardíacas e metabólicas.</li>
+                    <li><b>Obesidade II:</b> Nível de obesidade moderado, com maior risco de problemas de saúde e
+                        necessidade de acompanhamento médico.</li>
+                    <li><b>Obesidade III:</b> Obesidade severa, associada a sérios riscos de saúde e que geralmente
+                        exige intervenção médica mais rigorosa.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="observacaocriancas">
+            <p>*Em crianças e adolescentes, o IMC também é medido, mas as faixas de peso normal, sobrepeso ou obesidade
+                não são as mesmas dos adultos.</p>
+        </div>
 
     </section>
 
+
+
+
+
+
     <footer id="footer">
 
+        <div class="caixadecimafooter">
+
+            <div class="sobre">
+                <h2>Sobre:</h2>
+                <p>Este projeto foi produzido ao decorrer do curso de desenvolvimento web do Instituto da Oportunidade
+                    Social(IOS), ele não deve ser visto como um site com fiz médicos ou informativos somento com cunho
+                    educacional.</p>
+            </div>
+
+            <div class="mapadosite">
+                <ul>
+                    <li>
+                        <h2>Mapa</h2>
+                    </li>
+                    <li><a href="#introducao">Introdução</a></li>
+                    <li><a href="#calculadora">Calculadora</a></li>
+                    <li><a href="#resultado">Resultado</a></li>
+                    <li><a href="#footer">Direitos autorais</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="caixadebaixofooter">
+            <p class="direitos">&copy; TODOS DIREITOS RESERVADOS</p>
+            <p class="autor">Desenvolvido por: <b>Matheus Fachel</b></p>
+        </div>
     </footer>
 
 
@@ -69,9 +202,45 @@
             document.getElementById("resultado").textContent = resultado.toFixed(2) // aqui ele está dizendo que to conteudo dentro de resultado vai ter como limite de casas decimais depois da (,) será de duas casas
         }
 
-        function trocaDeTema() {
+
+
+
+
+
+        function trocarDeTema() {
+            const barranav = document.getElementById("navegador");
+
+            const h1daintro = document.getElementById("ficanessacorinferno")
+
+            // const listaNavegacao = document.getElementById("lista-navegacao");
+
+            const corpo = document.getElementById("corpo")
+
+            const footer = document.getElementById("footer")
+
+
+            
+            // listaNavegacao.classList.toggle("tema-escuro");
+            // eu sei que a gente não viu mas essa foi a unica maneira de todas minhas tentativas  que eu consegui fazer funicionar essa troca de cor.
+
+            // agora eu fui testar de novo e simplesmente parrou de funcionar eu deseisto por isso a cor do nav vai ficar fixa em cinza 
+
+            //retirando troca de cor do nav
+
+            // barranav.style.backgroundColor = barranav.style.backgroundColor === "rgba(169, 169, 169, 0.267)" ? "#000000" : "rgba(169, 169, 169, 0.267)";
+
+            barranav.style.backgroundColor = barranav.style.backgroundColor === "rgba(169, 169, 169, 0.267)"
+
+            h1daintro.style.color = "black"
+
+            corpo.style.backgroundColor = corpo.style.backgroundColor === "white" ? "black" : "white";
+
+            corpo.style.color = corpo.style.color === "black" ? "white" : "black";
+
+            footer.style.color = footer.style.color === "black" ? "white" : "black";
 
         }
+
 
     </script>
 
